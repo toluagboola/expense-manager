@@ -1,19 +1,22 @@
 import React from "react";
 
-function AddExpenseForm({ isActive, setDialog, refs, addExpense }) {
+function AddExpenseForm({ isActive, dialog, closeModal, refs, addExpense }) {
 	const { merchantRef, totalRef, dateRef, commentRef } = refs;
+	const { eventID, isBeingEdited } = dialog;
 
 	return (
 		<div id="modal-dialog" className={`modal ${isActive} modal-fx-fadeInScale`}>
-			<div className="modal-background" onClick={() => setDialog(false)}></div>
+			<div className="modal-background" onClick={closeModal}></div>
 
 			<div className="modal-card">
 				<header className="modal-card-head">
-					<p className="modal-card-title mb-0">Add Expense</p>
+					<p className="modal-card-title mb-0">
+						{isBeingEdited ? "Edit expense" : "Add expense"}
+					</p>
 					<button
 						className="delete"
 						aria-label="close"
-						onClick={() => setDialog(false)}
+						onClick={closeModal}
 					></button>
 				</header>
 
@@ -22,8 +25,9 @@ function AddExpenseForm({ isActive, setDialog, refs, addExpense }) {
 						<div className="field">
 							<label className="label">Merchant</label>
 							<div className="control">
-								<div className="select">
+								<div className="select is-fullwidth">
 									<select name="merchant" ref={merchantRef}>
+										<option value=""></option>
 										<option value="Office supplies">Office supplies</option>
 										<option value="Parking">Parking</option>
 										<option value="Rental car">Rental car</option>
@@ -74,11 +78,11 @@ function AddExpenseForm({ isActive, setDialog, refs, addExpense }) {
 					<button
 						className="button has-pink-bg"
 						type="submit"
-						onClick={addExpense}
+						onClick={() => addExpense(eventID)}
 					>
 						Save
 					</button>
-					<button className="button" onClick={() => setDialog(false)}>
+					<button className="button" onClick={closeModal}>
 						Cancel
 					</button>
 				</footer>

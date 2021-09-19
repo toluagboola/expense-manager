@@ -1,13 +1,14 @@
 import React, { useState } from "react";
+import "../css/Navbar.css";
 
 function Navbar() {
 	const [isActive, setActive] = useState(false);
 
 	return (
-		<nav className="navbar px-5 py-2">
+		<nav className="navbar is-fixed-top px-5 py-2">
 			<div className="navbar-brand">
 				<div className="navbar-item">
-					<h3 className="is-uppercase">Expense Manager</h3>
+					<h3 className="is-uppercase has-text-white">Expense Manager</h3>
 				</div>
 
 				<div
@@ -31,9 +32,6 @@ function Navbar() {
 				>
 					<div className="navbar-item">
 						<div className="buttons">
-							<button className="button is-info is-uppercase">
-								<strong>Info</strong>
-							</button>
 							<a href="/login" className="button is-light is-uppercase">
 								Log out
 							</a>
