@@ -32,7 +32,13 @@ function Navbar() {
 				>
 					<div className="navbar-item">
 						<div className="buttons">
-							<a href="/login" className="button is-light is-uppercase">
+							<a
+								href="https://github.com/toluagboola/expense-manager"
+								className="button is-light is-uppercase"
+							>
+								GitHub
+							</a>
+							<a href="/login" className="button is-info is-uppercase">
 								Log out
 							</a>
 						</div>
