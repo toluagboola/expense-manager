@@ -1,5 +1,5 @@
 import "bulma/css/bulma.min.css";
-import "./App.css";
+import "./css/App.css";
 import { useState, useEffect, useRef } from "react";
 import { Plus } from "react-feather";
 import data from "./data";
