@@ -63,10 +63,9 @@ function AddExpenseForm({ isActive, dialog, closeModal, refs, addExpense }) {
 							<div className="control">
 								<label className="label">Comments</label>
 								<textarea
-									name="notes"
+									name="comments"
 									ref={commentRef}
 									className="textarea"
-									placeholder="Why are you tracking this event?"
 									required
 								></textarea>
 							</div>

@@ -6,11 +6,15 @@ const SideBar = ({ refs, clearFilters, filterExpenses }) => {
 
 	return (
 		<div className={`sidebar is-2 pt-4 px-5`}>
-			<h3>Filter expenses</h3>
-			<button className="button" onClick={clearFilters}>
-				Clear filters
-			</button>
-			<form className="pt-4">
+			<div className="sidebar-top">
+				<h3>Filter expenses</h3>
+				<p className="has-text-info clear-filters" onClick={clearFilters}>
+					Clear filters
+				</p>
+			</div>
+
+			<hr />
+			<form className="pt-1">
 				<div className="field">
 					<div className="control">
 						<label className="label">From</label>

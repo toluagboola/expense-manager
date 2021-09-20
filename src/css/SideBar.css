@@ -11,16 +11,22 @@
   width: 20%;
 }
 
+hr {
+  margin: 1rem 0;
+}
+
+.sidebar-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.clear-filters {
+  cursor: pointer;
+}
+
 @media screen and (max-width: 750px) {
   .sidebar {
     display: none;
-    position: absolute;
-    transition: left 0.3s ease-in-out;
-  }
-
-  .open {
-    display: block;
-    width: 100%;
-    background: #fff;
   }
 }

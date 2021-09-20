@@ -5,6 +5,7 @@ import { Plus } from "react-feather";
 import data from "./data";
 import Navbar from "./components/Navbar";
 import SideBar from "./components/SideBar";
+import MobileToolbar from "./components/MobileToolbar";
 import Table from "./components/Table";
 import AddExpenseForm from "./components/AddExpenseForm";
 
@@ -119,6 +120,12 @@ function App() {
     setFiltered(filteredExpenses);
   };
 
+  const deleteExpense = (id) => {
+    if (window.confirm("Are you sure you want to delete this expense?")) {
+      setExpenses(expenses.filter((item) => item.id !== id));
+    }
+  };
+
   // Clear filters
   const clearFilters = () => {
     fromDateRef.current.value = "";
@@ -158,6 +165,8 @@ function App() {
     };
   });
 
+  const isScreenMobile = window.matchMedia("(max-width: 750px)").matches;
+
   return (
     <>
       <Navbar />
@@ -187,7 +196,26 @@ function App() {
           addExpense={addExpense}
         />
 
-        <div className="container">
+        <div className="container pt-3">
+          {isScreenMobile ? (
+            <MobileToolbar
+              filtered={filtered}
+              expenses={expenses}
+              isFiltered={isFiltered}
+              calculateTotal={calculateTotal}
+              clearFilters={clearFilters}
+              filterExpenses={filterExpenses}
+              refs={{
+                fromDateRef: fromDateRef,
+                toDateRef: toDateRef,
+                minRef: minRef,
+                maxRef: maxRef,
+                merchantFilterRef: merchantFilterRef,
+              }}
+            />
+          ) : (
+            <></>
+          )}
           <Table
             data={!isFiltered ? expenses : filtered}
             setDialog={setDialog}
@@ -197,6 +225,7 @@ function App() {
               dateRef: dateRef,
               commentRef: commentRef,
             }}
+            deleteExpense={deleteExpense}
           />
         </div>
 
