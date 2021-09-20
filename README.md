@@ -1,6 +1,6 @@
 # Expense Manager
 
-An application that allows the user to add, edit and track total expenses. The live demo for this project can be found [here](https://tolu-expense-manager.herokuapp.com/)
+An application that allows the user to add, edit and track total expenses. The live demo for this project can be found [here](https://tolu-expense-manager.herokuapp.com/).
 
 ![Screenshot of the expense manager](https://github.com/toluagboola/expense-manager/blob/master/expense-manager.png)
 
