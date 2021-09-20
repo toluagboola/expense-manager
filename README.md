@@ -2,6 +2,8 @@
 
 An application that allows the user to add, edit and track total expenses.
 
+![Screenshot of the expense manager](https://github.com/toluagboola/expense-manager/blob/master/expense-manager.png)
+
 ## Setup
 
 - Clone this repo into your machine
