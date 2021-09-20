@@ -34,7 +34,7 @@ function Navbar() {
 						<div className="buttons">
 							<a
 								href="https://github.com/toluagboola/expense-manager"
-								className="button is-light is-uppercase"
+								className="button is-uppercase"
 							>
 								GitHub
 							</a>
